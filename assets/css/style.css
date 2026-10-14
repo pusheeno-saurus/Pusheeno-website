@@ -517,9 +517,7 @@ a { color: var(--accent-strong); }
 }
 .social-icon svg { width: 26px; height: 26px; }
 .social-icon-ig { background: linear-gradient(135deg, #feda75 0%, #d62976 55%, #4f5bd5 100%); }
-.social-icon-tt { background: #111111; }
-.social-icon-yt { background: #e62117; }
-.social-icon-mail { background: var(--accent); }
+.social-icon-fb { background: #1877f2; }
 .social-text { display: flex; flex-direction: column; line-height: 1.25; }
 .social-name {
   font-family: var(--font-display);
