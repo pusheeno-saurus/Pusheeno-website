@@ -23,12 +23,36 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
       - name: Configure Pages
         uses: actions/configure-pages@v5
+
       - name: Upload site
         uses: actions/upload-pages-artifact@v3
         with:
           path: .
+
       - name: Deploy
         id: deployment
         uses: actions/deploy-pages@v4
+
+      # The custom domain lives in the CNAME file at the repository root.
+      # Edit that file to change the domain; delete it to go back to the github.io address.
+      - name: Set custom domain from the CNAME file
+        if: ${{ hashFiles('CNAME') != '' }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          domain="$(tr -d ' \r\n' < CNAME)"
+          current="$(gh api "repos/${GITHUB_REPOSITORY}/pages" --jq '.cname // ""' || true)"
+          if [ "$current" != "$domain" ]; then
+            gh api -X PUT "repos/${GITHUB_REPOSITORY}/pages" -f cname="$domain"
+            echo "Custom domain set to $domain"
+          else
+            echo "Custom domain already $domain"
+          fi
+          if gh api -X PUT "repos/${GITHUB_REPOSITORY}/pages" -F https_enforced=true >/dev/null 2>&1; then
+            echo "HTTPS enforced"
+          else
+            echo "HTTPS not enforceable yet (the certificate is issued after the DNS check passes)"
+          fi
