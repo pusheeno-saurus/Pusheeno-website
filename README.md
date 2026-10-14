@@ -26,7 +26,7 @@ Everything visible is in `index.html`. Each section is marked with a comment suc
 1. Save the photo in `assets/img/` as a JPG about 1600px on its long side, plus an 800px copy with
    `-thumb` before `.jpg` (for example `pusheeno-10.jpg` and `pusheeno-10-thumb.jpg`). Export without
    location data, or let any image tool strip it.
-2. The gallery is split into groups ("On the road", "Snack time", "The crew"). Copy one of the
+2. The gallery is split into groups ("On the road", "Italy", "Snack time", "The crew"). Copy one of the
    `<a class="photo">` blocks into the right group's `.photo-grid` in `index.html` and change `href`,
    `src`, `alt`, `width`, `height` and `data-caption`.
 3. Use `class="photo tall"` for a portrait photo that should span two rows, and `object-position`
