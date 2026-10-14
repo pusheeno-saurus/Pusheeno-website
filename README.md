@@ -51,9 +51,10 @@ One-time setup in the repository on GitHub:
 
 **Using the custom domain**
 
-1. Settings → Pages → **Custom domain**: enter `www.pusheenosaurus.com` and save. GitHub creates a
-   `CNAME` file in the repository.
-2. At the domain registrar, add a `CNAME` record pointing `www` to `pusheeno-saurus.github.io`, and,
-   for the bare domain, `A` records to GitHub Pages' IPs (listed in GitHub's docs under
-   "Managing a custom domain for your GitHub Pages site").
-3. Once the DNS check passes, tick **Enforce HTTPS**.
+1. Settings → Pages → **Custom domain**: enter `www.pusheenosaurus.com` and save. (The site deploys
+   through GitHub Actions, so no `CNAME` file is needed in the repository.)
+2. At the domain's DNS provider (Squarespace), add a `CNAME` record for `www` pointing to
+   `pusheeno-saurus.github.io`, and `A` and `AAAA` records for the root domain pointing to GitHub
+   Pages' addresses, listed in GitHub's docs under "Managing a custom domain for your GitHub Pages
+   site". Remove any older records for `@` and `www` that point elsewhere.
+3. Once the DNS check in Settings → Pages passes, tick **Enforce HTTPS**.
