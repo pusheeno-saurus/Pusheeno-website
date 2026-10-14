@@ -14,7 +14,7 @@ receives. Open `index.html` in a browser to preview it locally.
 | `assets/css/style.css` | Styles. Colours and fonts live in the `:root` block at the top |
 | `assets/js/main.js` | Mobile menu, scroll-in animation, photo lightbox |
 | `assets/img/` | Logo, favicon and photos |
-| `.github/workflows/deploy.yml` | Publishes the site to GitHub Pages on every push to `main` |
+| `.github/workflows/deploy.yml` | Publishes the site to GitHub Pages on every push to the default branch |
 
 ## Editing content
 
@@ -46,8 +46,9 @@ media. Replace it with a 1200 x 630 photo.
 One-time setup in the repository on GitHub:
 
 1. Settings → Pages → under **Build and deployment**, set **Source** to **GitHub Actions**.
-2. Merge this branch into `main`. The workflow in `.github/workflows/deploy.yml` deploys the site and
-   prints its URL.
+2. Every push to the repository's default branch runs `.github/workflows/deploy.yml`, which deploys
+   the site and prints its URL. (GitHub only lets the default branch deploy to the github-pages
+   environment; if you change the default branch, update the branch name in the workflow too.)
 
 **Using the custom domain**
 

@@ -2,7 +2,8 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [main]
+    # The github-pages environment only lets the repository's default branch deploy.
+    branches: [claude/gallant-euler-fegfc3]
   workflow_dispatch:
 
 permissions:
