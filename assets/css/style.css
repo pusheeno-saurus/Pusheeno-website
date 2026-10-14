@@ -461,6 +461,9 @@ a { color: var(--accent-strong); }
 
 /* ---------- Gallery ---------- */
 .gallery { background: var(--bg-alt); }
+.gallery-group + .gallery-group { margin-top: clamp(40px, 6vw, 64px); }
+.gallery-group-title { margin-bottom: 0.1em; }
+.gallery-group-lede { color: var(--muted); margin: 0 0 16px; }
 .photo-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
