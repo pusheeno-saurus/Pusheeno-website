@@ -28,13 +28,13 @@ Everything visible is in `index.html`. Each section is marked with a comment suc
    and `data-caption`.
 3. Add the class `tall` (`class="photo tall"`) to make a portrait photo span two rows.
 
-**Change the hero photo**: replace `assets/img/hero-placeholder.svg` in the hero `<img>` with your
-portrait. Portrait orientation (taller than wide) looks best.
+**Change the hero photo**: replace `assets/img/pusheeno-hero.jpg` with a new 900 x 1100 image, or point
+the hero `<img>` at a different file. Portrait orientation (taller than wide) looks best.
 
-**Social links**: edit the `href` and `@handle` text in the Follow section. Delete any card for a
-network Pusheeno isn't on.
+**Social links**: the Follow section has one card, for Instagram. To add a network, copy the
+`<li>` block and change its link, icon and text.
 
-**Share preview image**: `assets/img/og-image.png` is what shows when the link is shared on social
+**Share preview image**: `assets/img/og-image.jpg` is what shows when the link is shared on social
 media. Replace it with a 1200 x 630 photo.
 
 ## Publishing with GitHub Pages
