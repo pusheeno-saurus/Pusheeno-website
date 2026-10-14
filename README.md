@@ -52,8 +52,8 @@ One-time setup in the repository on GitHub:
 
 **Using the custom domain**
 
-1. Settings → Pages → **Custom domain**: enter `www.pusheenosaurus.com` and save. (The site deploys
-   through GitHub Actions, so no `CNAME` file is needed in the repository.)
+1. Settings → Pages → **Custom domain**: enter `www.pusheenosaurus.com` and save. The site deploys
+   through GitHub Actions, so the domain lives in that setting, not in a `CNAME` file.
 2. At the domain's DNS provider (Squarespace), add a `CNAME` record for `www` pointing to
    `pusheeno-saurus.github.io`, and `A` and `AAAA` records for the root domain pointing to GitHub
    Pages' addresses, listed in GitHub's docs under "Managing a custom domain for your GitHub Pages
