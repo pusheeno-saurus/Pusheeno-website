@@ -47,7 +47,7 @@
 
   /* ---- Lightbox for the photo gallery ---- */
   var lightbox = document.getElementById('lightbox');
-  var photos = Array.prototype.slice.call(document.querySelectorAll('.photo-grid .photo'));
+  var photos = Array.prototype.slice.call(document.querySelectorAll('a.photo'));
 
   if (lightbox && photos.length) {
     var img = lightbox.querySelector('.lb-img');
