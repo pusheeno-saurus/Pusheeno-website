@@ -45,11 +45,12 @@ jobs:
         run: |
           domain="$(tr -d ' \r\n' < CNAME)"
           current="$(gh api "repos/${GITHUB_REPOSITORY}/pages" --jq '.cname // ""' || true)"
-          if [ "$current" != "$domain" ]; then
-            gh api -X PUT "repos/${GITHUB_REPOSITORY}/pages" -f cname="$domain"
+          if [ "$current" = "$domain" ]; then
+            echo "Custom domain already $domain"
+          elif gh api -X PUT "repos/${GITHUB_REPOSITORY}/pages" -f cname="$domain" >/dev/null; then
             echo "Custom domain set to $domain"
           else
-            echo "Custom domain already $domain"
+            echo "::warning::Could not set the custom domain automatically. Enter $domain under Settings > Pages > Custom domain."
           fi
           if gh api -X PUT "repos/${GITHUB_REPOSITORY}/pages" -F https_enforced=true >/dev/null 2>&1; then
             echo "HTTPS enforced"
