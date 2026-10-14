@@ -23,10 +23,14 @@ Everything visible is in `index.html`. Each section is marked with a comment suc
 
 **Add a photo to the gallery**
 
-1. Put the image in `assets/img/` (JPG or PNG, ideally under 500 KB).
-2. Copy one of the `<a class="photo">` blocks inside `.photo-grid` and change `href`, `src`, `alt`
-   and `data-caption`.
-3. Add the class `tall` (`class="photo tall"`) to make a portrait photo span two rows.
+1. Save the photo in `assets/img/` as a JPG about 1600px on its long side, plus an 800px copy with
+   `-thumb` before `.jpg` (for example `pusheeno-10.jpg` and `pusheeno-10-thumb.jpg`). Export without
+   location data, or let any image tool strip it.
+2. Copy one of the `<a class="photo">` blocks inside `.photo-grid` in `index.html` and change `href`,
+   `src`, `alt`, `width`, `height` and `data-caption`.
+3. Use `class="photo tall"` for a portrait photo that should span two rows, and `object-position`
+   on the `<img>` to choose which part stays visible in the grid. Keep the total at 12 grid cells
+   (a tall photo counts as 2) so every row is full.
 
 **Change the hero photo**: replace `assets/img/pusheeno-hero.jpg` with a new 900 x 1100 image, or point
 the hero `<img>` at a different file. Portrait orientation (taller than wide) looks best.
