@@ -139,7 +139,7 @@ for p in places:
     if p.get('country') and p['country'] not in countries:
         countries.append(p['country'])
 
-stats = [('Continents', '%d of 7' % len(continents)), ('Countries', str(len(countries))),
+stats = [('Continents', '%d of 7' % len(continents)), ('Countries &\u00a0territories', str(len(countries))),
          ('Farthest from home', '{:,} miles'.format(int(round(miles(home, farthest), -2))))]
 stats_html = ''.join('          <li class="fact"><span class="fact-label">%s</span><span class="fact-value">%s</span></li>\n'
                      % (html.escape(k), html.escape(v)) for k, v in stats)
