@@ -327,7 +327,6 @@ a { color: var(--accent-strong); }
   white-space: nowrap;
 }
 .sticker-1 { top: 6%; left: -6%; background: var(--pink); transform: rotate(-6deg); }
-.sticker-2 { bottom: 8%; right: -4%; background: var(--sky); transform: rotate(4deg); }
 
 .hero-wave {
   position: absolute;
@@ -344,7 +343,6 @@ a { color: var(--accent-strong); }
   .hero-photo { max-width: 400px; margin-inline: auto; width: 100%; }
   .lede { max-width: none; }
   .sticker-1 { left: 0; }
-  .sticker-2 { right: 0; }
 }
 
 /* ---------- About ---------- */
