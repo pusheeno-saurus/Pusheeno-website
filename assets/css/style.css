@@ -439,28 +439,6 @@ a { color: var(--accent-strong); }
   .facts { grid-template-columns: 1fr; }
 }
 
-/* ---------- Pusheeno & Mersheen ---------- */
-.couple { background: var(--bg-alt); }
-.couple-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
-}
-.couple-item { margin: 0; }
-.couple-item .photo { aspect-ratio: 4 / 3; }
-.couple-item img { width: 100%; height: 100%; object-fit: cover; }
-.couple-item.feature { grid-column: 1 / -1; }
-.couple-item.feature .photo { aspect-ratio: 5 / 2; }
-.couple-item figcaption {
-  margin-top: 10px;
-  color: var(--muted);
-  font-size: 0.95rem;
-}
-@media (max-width: 800px) {
-  .couple-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
-  .couple-item.feature .photo { aspect-ratio: 16 / 9; }
-}
-
 /* ---------- Where he's been ---------- */
 .map-stats {
   margin: -8px 0 22px;
@@ -517,6 +495,7 @@ a { color: var(--accent-strong); }
 }
 
 /* ---------- Meet the crew ---------- */
+.crew-section { background: var(--bg-alt); }
 .crew-grid {
   list-style: none;
   margin: 0;
@@ -560,7 +539,7 @@ a { color: var(--accent-strong); }
 }
 
 /* ---------- Gallery ---------- */
-.gallery { background: var(--bg-alt); }
+.gallery { background: var(--bg); }
 .gallery-group + .gallery-group { margin-top: clamp(40px, 6vw, 64px); }
 .gallery-group-title { margin-bottom: 0.1em; }
 .gallery-group-lede { color: var(--muted); margin: 0 0 16px; }
@@ -583,6 +562,7 @@ a { color: var(--accent-strong); }
   box-shadow: var(--shadow);
 }
 .photo.tall { grid-row: span 2; }
+.photo.wide { grid-column: span 2; }
 .photo img {
   width: 100%;
   height: 100%;
@@ -601,7 +581,7 @@ a { color: var(--accent-strong); }
 }
 
 /* ---------- Social ---------- */
-.social { background: var(--bg); }
+.social { background: var(--bg-alt); }
 .social-grid {
   list-style: none;
   margin: 0;

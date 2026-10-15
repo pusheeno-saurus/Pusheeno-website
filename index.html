@@ -40,7 +40,6 @@
       <ul id="nav-menu" class="nav-menu">
         <li><a href="#about">About</a></li>
         <li><a href="#map">Map</a></li>
-        <li><a href="#mersheen">Mersheen</a></li>
         <li><a href="#crew">Crew</a></li>
         <li><a href="#gallery">Gallery</a></li>
         <li><a href="#social">Follow</a></li>
@@ -179,61 +178,6 @@
       </div>
     </section>
 
-    <!-- ============ MERSHEEN ============ -->
-    <section class="section couple" id="mersheen">
-      <div class="container">
-        <div class="section-head reveal">
-          <p class="eyebrow">Pusheeno &amp; Mersheen</p>
-          <h2>The two of them</h2>
-          <p class="section-lede">Pusheeno married Mersheen on July 7, 2024. She brings the sparkle. He brings the face.</p>
-        </div>
-        <div class="couple-grid reveal">
-          <figure class="couple-item feature">
-            <a class="photo" href="assets/img/mersheen-08.jpg" data-caption="Snow day, the two of them.">
-              <img src="assets/img/mersheen-08.jpg" alt="Mersheen and Pusheeno side by side in fresh snow, with snowflakes settling on them" loading="lazy" width="1600" height="1200" style="object-position: 50% 55%">
-            </a>
-            <figcaption>Snow day, the two of them.</figcaption>
-          </figure>
-          <figure class="couple-item">
-            <a class="photo" href="assets/img/mersheen-01.jpg" data-caption="Over Waimea Canyon, Kauai.">
-              <img src="assets/img/mersheen-01-thumb.jpg" alt="Pusheeno and Mersheen, a Pusheen mermaid plush with a yellow star, held up in front of a vast red and green canyon" loading="lazy" width="800" height="600" style="object-position: 50% 50%">
-            </a>
-            <figcaption>Over Waimea Canyon, Kauai.</figcaption>
-          </figure>
-          <figure class="couple-item">
-            <a class="photo" href="assets/img/mersheen-02.jpg" data-caption="Aloha.">
-              <img src="assets/img/mersheen-02-thumb.jpg" alt="Pusheeno and Mersheen on a hotel bed with the word ALOHA spelled out in shell leis" loading="lazy" width="800" height="600" style="object-position: 50% 40%">
-            </a>
-            <figcaption>Aloha.</figcaption>
-          </figure>
-          <figure class="couple-item">
-            <a class="photo" href="assets/img/mersheen-03.jpg" data-caption="Beach day, pier included.">
-              <img src="assets/img/mersheen-03-thumb.jpg" alt="Pusheeno and Mersheen perched on a weathered wooden piling on a pebble beach, with a pier behind" loading="lazy" width="800" height="600" style="object-position: 50% 55%">
-            </a>
-            <figcaption>Beach day, pier included.</figcaption>
-          </figure>
-          <figure class="couple-item">
-            <a class="photo" href="assets/img/mersheen-04.jpg" data-caption="Happy holidays, from the two of them.">
-              <img src="assets/img/mersheen-04-thumb.jpg" alt="Mersheen and Pusheeno on either side of a chocolate cake topped with penguins, marshmallows and a happy holidays sign" loading="lazy" width="800" height="600" style="object-position: 50% 55%">
-            </a>
-            <figcaption>Happy holidays, from the two of them.</figcaption>
-          </figure>
-          <figure class="couple-item">
-            <a class="photo" href="assets/img/mersheen-06.jpg" data-caption="Lavender, vines, and Mount Hood.">
-              <img src="assets/img/mersheen-06-thumb.jpg" alt="Pusheeno with a sprig of lavender and Mersheen side by side in a vineyard, with Mount Hood on the horizon" loading="lazy" width="800" height="600" style="object-position: 50% 55%">
-            </a>
-            <figcaption>Lavender, vines, and Mount Hood.</figcaption>
-          </figure>
-          <figure class="couple-item">
-            <a class="photo" href="assets/img/mersheen-07.jpg" data-caption="Cape Kiwanda, on the Oregon coast.">
-              <img src="assets/img/mersheen-07-thumb.jpg" alt="Pusheeno and Mersheen lying in the sand on a dune, with Haystack Rock and the ocean behind" loading="lazy" width="800" height="600" style="object-position: 50% 55%">
-            </a>
-            <figcaption>Cape Kiwanda, on the Oregon coast.</figcaption>
-          </figure>
-        </div>
-      </div>
-    </section>
-
     <!-- ============ CREW ============ -->
     <section class="section crew-section" id="crew">
       <div class="container">
@@ -294,10 +238,39 @@
              named the same with -thumb before .jpg.
           2. Copy one <a class="photo"> block into the group it belongs to and change href, src, alt,
              width, height and data-caption.
-          3. Use class="photo tall" for a portrait photo that should take up two rows, and
-             object-position to choose which part of the photo stays visible in the grid.
+          3. Use class="photo tall" for a portrait photo that should take up two rows, class="photo wide"
+             for a landscape photo that should take up two columns, and object-position to choose which
+             part of the photo stays visible in the grid.
           4. Keep each group's cell count a multiple of 4 (a tall photo counts as 2) so every row is full.
         -->
+        <div class="gallery-group">
+          <h3 class="gallery-group-title">The two of them</h3>
+          <p class="gallery-group-lede">Pusheeno married Mersheen on July 7, 2024. She brings the sparkle. He brings the face.</p>
+          <div class="photo-grid reveal">
+            <a class="photo wide" href="assets/img/mersheen-08.jpg" data-caption="Snow day, the two of them.">
+              <img src="assets/img/mersheen-08-thumb.jpg" alt="Mersheen and Pusheeno side by side in fresh snow, with snowflakes settling on them" loading="lazy" width="800" height="600" style="object-position: 50% 55%">
+            </a>
+            <a class="photo" href="assets/img/mersheen-01.jpg" data-caption="Over Waimea Canyon, Kauai.">
+              <img src="assets/img/mersheen-01-thumb.jpg" alt="Pusheeno and Mersheen, a Pusheen mermaid plush with a yellow star, held up in front of a vast red and green canyon" loading="lazy" width="800" height="600" style="object-position: 50% 50%">
+            </a>
+            <a class="photo" href="assets/img/mersheen-02.jpg" data-caption="Aloha.">
+              <img src="assets/img/mersheen-02-thumb.jpg" alt="Pusheeno and Mersheen on a hotel bed with the word ALOHA spelled out in shell leis" loading="lazy" width="800" height="600" style="object-position: 50% 40%">
+            </a>
+            <a class="photo" href="assets/img/mersheen-03.jpg" data-caption="Beach day, pier included.">
+              <img src="assets/img/mersheen-03-thumb.jpg" alt="Pusheeno and Mersheen perched on a weathered wooden piling on a pebble beach, with a pier behind" loading="lazy" width="800" height="600" style="object-position: 50% 55%">
+            </a>
+            <a class="photo" href="assets/img/mersheen-04.jpg" data-caption="Happy holidays, from the two of them.">
+              <img src="assets/img/mersheen-04-thumb.jpg" alt="Mersheen and Pusheeno on either side of a chocolate cake topped with penguins, marshmallows and a happy holidays sign" loading="lazy" width="800" height="600" style="object-position: 50% 55%">
+            </a>
+            <a class="photo" href="assets/img/mersheen-06.jpg" data-caption="Lavender, vines, and Mount Hood.">
+              <img src="assets/img/mersheen-06-thumb.jpg" alt="Pusheeno with a sprig of lavender and Mersheen side by side in a vineyard, with Mount Hood on the horizon" loading="lazy" width="800" height="600" style="object-position: 50% 55%">
+            </a>
+            <a class="photo" href="assets/img/mersheen-07.jpg" data-caption="Cape Kiwanda, on the Oregon coast.">
+              <img src="assets/img/mersheen-07-thumb.jpg" alt="Pusheeno and Mersheen lying in the sand on a dune, with Haystack Rock and the ocean behind" loading="lazy" width="800" height="600" style="object-position: 50% 55%">
+            </a>
+          </div>
+        </div>
+
         <div class="gallery-group">
           <h3 class="gallery-group-title">On the road</h3>
           <p class="gallery-group-lede">Passport stamps and day trips, in no particular order.</p>
