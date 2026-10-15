@@ -35,8 +35,8 @@ Everything visible is in `index.html`. Each section is marked with a comment suc
    on the `<img>` to choose which part stays visible in the grid. Keep each group's cell count a
    multiple of 4 (a tall photo counts as 2) so every row is full on both desktop and phones.
 
-**The two of them** is the first gallery group. Its lead photo uses `class="photo wide"`, which
-spans two columns; a group's cell count must stay a multiple of 4 (tall and wide photos count as 2).
+**The two of them** is the first gallery group. A landscape photo can use `class="photo wide"` to span
+two columns; a group's cell count must stay a multiple of 4 (tall and wide photos count as 2).
 
 **Add or edit a friend in Meet the crew**
 
