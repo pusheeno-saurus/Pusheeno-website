@@ -450,6 +450,8 @@ a { color: var(--accent-strong); }
 .couple-item { margin: 0; }
 .couple-item .photo { aspect-ratio: 4 / 3; }
 .couple-item img { width: 100%; height: 100%; object-fit: cover; }
+.couple-item.feature { grid-column: 1 / -1; }
+.couple-item.feature .photo { aspect-ratio: 5 / 2; }
 .couple-item figcaption {
   margin-top: 10px;
   color: var(--muted);
@@ -457,6 +459,7 @@ a { color: var(--accent-strong); }
 }
 @media (max-width: 800px) {
   .couple-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .couple-item.feature .photo { aspect-ratio: 16 / 9; }
 }
 
 /* ---------- Gallery ---------- */

@@ -33,6 +33,9 @@ Everything visible is in `index.html`. Each section is marked with a comment suc
    on the `<img>` to choose which part stays visible in the grid. Keep each group's cell count a
    multiple of 4 (a tall photo counts as 2) so every row is full on both desktop and phones.
 
+**The two of them**: the `<figure class="couple-item feature">` is the wide photo at the top of
+that section; the others show three across (two on phones), so keep their count a multiple of six.
+
 **Change the hero photo**: replace `assets/img/pusheeno-hero.jpg` with a new 900 x 1100 image, or point
 the hero `<img>` at a different file. Portrait orientation (taller than wide) looks best.
 
