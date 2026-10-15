@@ -4,6 +4,7 @@
   {"name": "Vancouver, British Columbia", "lat": 49.28, "lon": -123.12, "continent": "North America", "country": "Canada"},
   {"name": "San Francisco and Mendocino, California", "lat": 38.5, "lon": -123.1, "continent": "North America", "country": "United States", "list": ["California: San Francisco", "California: Mendocino"]},
   {"name": "Southern California", "lat": 33.5, "lon": -117.5, "continent": "North America", "country": "United States", "note": "San Diego, Joshua Tree, and the bits in between.", "list": ["California: Southern California", "California: San Diego", "California: Joshua Tree"]},
+  {"name": "Yosemite and Death Valley, California", "lat": 37.87, "lon": -119.54, "continent": "North America", "country": "United States", "list": ["California: Yosemite", "California: Death Valley"]},
   {"name": "Las Vegas, Nevada", "lat": 36.17, "lon": -115.14, "continent": "North America", "country": "United States"},
   {"name": "Zion and Bryce Canyon, Utah", "lat": 37.45, "lon": -112.6, "continent": "North America", "country": "United States", "list": ["Utah: Zion", "Utah: Bryce Canyon"]},
   {"name": "Arches and Moab, Utah", "lat": 38.65, "lon": -109.57, "continent": "North America", "country": "United States", "note": "Red rock and snow.", "list": ["Utah: Arches", "Utah: Moab"]},
