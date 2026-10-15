@@ -444,8 +444,8 @@ a { color: var(--accent-strong); }
 /* ---------- Pusheeno & Mersheen ---------- */
 .couple-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
 }
 .couple-item { margin: 0; }
 .couple-item .photo { aspect-ratio: 4 / 3; }
@@ -456,7 +456,7 @@ a { color: var(--accent-strong); }
   font-size: 0.95rem;
 }
 @media (max-width: 800px) {
-  .couple-grid { grid-template-columns: 1fr; max-width: 520px; }
+  .couple-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
 }
 
 /* ---------- Gallery ---------- */
