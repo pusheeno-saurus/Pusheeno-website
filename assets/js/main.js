@@ -45,6 +45,19 @@
     revealEls.forEach(function (el) { el.classList.add('is-visible'); });
   }
 
+  /* ---- Map pins: tap to show or hide a label (hover and focus work without this) ---- */
+  var pins = Array.prototype.slice.call(document.querySelectorAll('.map .pin'));
+  pins.forEach(function (pin) {
+    pin.addEventListener('click', function () {
+      var open = !pin.classList.contains('is-open');
+      pins.forEach(function (p) { p.classList.remove('is-open'); });
+      if (open) pin.classList.add('is-open');
+    });
+  });
+  document.addEventListener('click', function (event) {
+    if (!event.target.closest('.map .pin')) pins.forEach(function (p) { p.classList.remove('is-open'); });
+  });
+
   /* ---- Lightbox for the photo gallery ---- */
   var lightbox = document.getElementById('lightbox');
   var photos = Array.prototype.slice.call(document.querySelectorAll('a.photo'));

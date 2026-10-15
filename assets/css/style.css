@@ -440,6 +440,7 @@ a { color: var(--accent-strong); }
 }
 
 /* ---------- Pusheeno & Mersheen ---------- */
+.couple { background: var(--bg-alt); }
 .couple-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -460,8 +461,74 @@ a { color: var(--accent-strong); }
   .couple-item.feature .photo { aspect-ratio: 16 / 9; }
 }
 
+/* ---------- Where he's been ---------- */
+.map-stats { grid-template-columns: repeat(3, 1fr); margin-bottom: 24px; }
+.map { position: relative; margin: 0 0 28px; }
+.map img { width: 100%; height: auto; display: block; }
+.pin {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  margin: -7px 0 0 -7px;
+  padding: 0;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  background: var(--accent-strong);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.35);
+  cursor: pointer;
+}
+.pin-home { width: 18px; height: 18px; margin: -9px 0 0 -9px; background: #e8667a; }
+.pin:hover, .pin:focus-visible, .pin.is-open { z-index: 3; }
+.pin-label {
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  width: max-content;
+  max-width: 220px;
+  padding: 7px 10px;
+  border-radius: 8px;
+  background: var(--text);
+  color: var(--bg);
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.85rem;
+  line-height: 1.35;
+  text-align: left;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.15s ease;
+}
+.pin-label small { display: block; font-weight: 400; font-size: 0.8rem; opacity: 0.85; }
+.pin:hover .pin-label, .pin:focus-visible .pin-label, .pin.is-open .pin-label { opacity: 1; }
+.pin.edge-left .pin-label { left: 0; transform: none; }
+.pin.edge-right .pin-label { left: auto; right: 0; transform: none; }
+.places {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 12px;
+}
+.places li {
+  padding: 14px 16px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+}
+.places strong { display: block; font-family: var(--font-display); font-weight: 600; margin-bottom: 2px; }
+.places span { color: var(--muted); font-size: 0.95rem; }
+@media (max-width: 640px) {
+  .map-stats { gap: 8px; }
+  .map-stats .fact { padding: 12px 10px; }
+  .map-stats .fact-value { font-size: 1rem; }
+  .pin { width: 11px; height: 11px; margin: -5.5px 0 0 -5.5px; }
+  .pin-home { width: 15px; height: 15px; margin: -7.5px 0 0 -7.5px; }
+}
+
 /* ---------- Gallery ---------- */
-.gallery { background: var(--bg-alt); }
+.gallery { background: var(--bg); }
 .gallery-group + .gallery-group { margin-top: clamp(40px, 6vw, 64px); }
 .gallery-group-title { margin-bottom: 0.1em; }
 .gallery-group-lede { color: var(--muted); margin: 0 0 16px; }
@@ -502,7 +569,7 @@ a { color: var(--accent-strong); }
 }
 
 /* ---------- Social ---------- */
-.social { background: var(--bg); }
+.social { background: var(--bg-alt); }
 .social-grid {
   list-style: none;
   margin: 0;

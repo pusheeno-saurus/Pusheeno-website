@@ -14,6 +14,7 @@ receives. Open `index.html` in a browser to preview it locally.
 | `assets/css/style.css` | Styles. Colours and fonts live in the `:root` block at the top |
 | `assets/js/main.js` | Mobile menu, scroll-in animation, photo lightbox |
 | `assets/img/` | Logo, favicon and photos |
+| `tools/map/` | The places list, the map data and the script that draws the map |
 | `.github/workflows/deploy.yml` | Publishes the site to GitHub Pages on every push to the default branch |
 
 ## Editing content
@@ -35,6 +36,17 @@ Everything visible is in `index.html`. Each section is marked with a comment suc
 
 **The two of them**: the `<figure class="couple-item feature">` is the wide photo at the top of
 that section; the others show three across (two on phones), so keep their count a multiple of six.
+
+**Add a place to the map**
+
+1. Add an entry to `tools/map/places.json`: name, latitude, longitude, continent, country, and an
+   optional `note` for the tooltip. Nearby places can share one pin: list them in `note` and `list`.
+2. Run `python3 tools/map/build_map.py`. It redraws `assets/img/world.svg` and rewrites the stats,
+   pins and continent list between the `MAP:GENERATED` markers in `index.html`.
+3. Commit the changed files.
+
+The coastlines come from Natural Earth via the `world-atlas` package (ISC licence), stored in
+`tools/map/land-110m.json`.
 
 **Change the hero photo**: replace `assets/img/pusheeno-hero.jpg` with a new 900 x 1100 image, or point
 the hero `<img>` at a different file. Portrait orientation (taller than wide) looks best.
