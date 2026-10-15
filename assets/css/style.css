@@ -462,7 +462,13 @@ a { color: var(--accent-strong); }
 }
 
 /* ---------- Where he's been ---------- */
-.map-stats { grid-template-columns: repeat(3, 1fr); margin-bottom: 24px; }
+.map-stats {
+  margin: -8px 0 22px;
+  font-size: 1.05rem;
+  color: var(--muted);
+}
+.map-stats strong { color: var(--text); font-family: var(--font-display); font-weight: 600; font-size: 1.2rem; }
+.map-stats .sep { margin: 0 8px; opacity: 0.6; }
 .map { position: relative; margin: 0 0 28px; }
 .map img { width: 100%; height: auto; display: block; }
 .pin {
@@ -532,33 +538,18 @@ a { color: var(--accent-strong); }
 }
 .places-row dd {
   margin: 0;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
+  font-size: 0.95rem;
+  line-height: 1.5;
 }
-.chip {
-  display: inline-block;
-  padding: 3px 10px;
-  border-radius: 999px;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  font-size: 0.88rem;
-  line-height: 1.4;
-}
-.chip-home {
-  background: var(--accent-soft);
-  border-color: transparent;
-  font-weight: 700;
-}
+.places-row dd strong { font-weight: 700; color: var(--accent-strong); }
 @media (max-width: 800px) {
   .places { grid-template-columns: 1fr; }
   .places-col + .places-col { margin-top: 22px; }
   .places-row dt { flex-basis: 92px; }
 }
 @media (max-width: 640px) {
-  .map-stats { gap: 8px; }
-  .map-stats .fact { padding: 12px 10px; }
-  .map-stats .fact-value { font-size: 1rem; }
+  .map-stats { font-size: 0.95rem; }
+  .map-stats .sep { margin: 0 5px; }
   .pin { width: 11px; height: 11px; margin: -5.5px 0 0 -5.5px; }
   .pin-home { width: 15px; height: 15px; margin: -7.5px 0 0 -7.5px; }
 }
