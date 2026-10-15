@@ -142,7 +142,7 @@
         </ul>
         <div class="map reveal">
           <img src="assets/img/world.svg" alt="World map with a pin on each place Pusheeno has been" width="1000" height="487">
-          <button type="button" class="pin pin-home" style="left: 20.90%; top: 17.01%" aria-label="Portland, Oregon. Home. Also Mount Hood, Cannon Beach, Pacific City and Seattle."><span class="pin-label">Portland, Oregon<small>Home. Also Mount Hood, Cannon Beach, Pacific City and Seattle.</small></span></button>
+          <button type="button" class="pin pin-home" style="left: 20.90%; top: 17.01%" aria-label="Portland, Oregon. Home. Also Mount Hood, Bend, Cannon Beach, Pacific City and Seattle."><span class="pin-label">Portland, Oregon<small>Home. Also Mount Hood, Bend, Cannon Beach, Pacific City and Seattle.</small></span></button>
           <button type="button" class="pin" style="left: 20.36%; top: 18.91%" aria-label="Crater Lake and Ashland, Oregon"><span class="pin-label">Crater Lake and Ashland, Oregon</span></button>
           <button type="button" class="pin" style="left: 21.63%; top: 14.69%" aria-label="Vancouver, British Columbia"><span class="pin-label">Vancouver, British Columbia</span></button>
           <button type="button" class="pin" style="left: 19.41%; top: 21.59%" aria-label="San Francisco and Mendocino, California"><span class="pin-label">San Francisco and Mendocino, California</span></button>
@@ -177,14 +177,70 @@
           <button type="button" class="pin edge-right" style="left: 93.84%; top: 77.24%" aria-label="Auckland, New Zealand"><span class="pin-label">Auckland, New Zealand</span></button>
           <button type="button" class="pin edge-right" style="left: 90.44%; top: 82.35%" aria-label="Queenstown and Lake Pukaki, New Zealand. Glacier-blue water at Lake Pukaki, with Ricky."><span class="pin-label">Queenstown and Lake Pukaki, New Zealand<small>Glacier-blue water at Lake Pukaki, with Ricky.</small></span></button>
         </div>
-        <ul class="places reveal" aria-label="Places by continent">
-          <li><strong>North America</strong><span>Portland, Oregon (home) · Mount Hood, Oregon · Cannon Beach, Oregon · Pacific City, Oregon · Seattle, Washington · Crater Lake, Oregon · Ashland, Oregon · Vancouver, British Columbia · San Francisco, California · Mendocino, California · Southern California · San Diego, California · Joshua Tree, California · Las Vegas, Nevada · Zion, Utah · Bryce Canyon, Utah · Arches, Utah · Moab, Utah · Denver, Colorado · San Antonio, Texas · Austin, Texas · Chicago, Illinois · Cleveland, Ohio · Indiana · Louisville, Kentucky · Nashville, Tennessee · North Carolina · New York City · Toronto, Ontario · Wellington, Ontario · Kauai, Hawaii · Maui, Hawaii · Big Island, Hawaii</span></li>
-          <li><strong>South America</strong><span>Santiago, Chile · Punta Arenas, Chile · Falkland Islands</span></li>
-          <li><strong>Antarctica</strong><span>Orne Harbour, Antarctica, January 2, 2020</span></li>
-          <li><strong>Europe</strong><span>Iceland · Edinburgh, Scotland · London, England · Prague, Czechia · Brno, Czechia · Milan, Bologna, Florence and Rome, Italy</span></li>
-          <li><strong>Asia</strong><span>Tokyo, Japan · Fukuoka, Japan · Nagasaki, Japan · Otaru, Hokkaido, Japan · Singapore</span></li>
-          <li><strong>Oceania</strong><span>Guam · Auckland, New Zealand · Queenstown, New Zealand · Lake Pukaki, New Zealand</span></li>
-        </ul>
+        <div class="places reveal" aria-label="Places by continent">
+          <div class="places-col">
+            <section class="places-group">
+              <h3 class="places-continent">North America</h3>
+              <dl class="places-rows">
+                <div class="places-row"><dt>Oregon</dt><dd><span class="chip chip-home">Portland (home)</span><span class="chip">Mount Hood</span><span class="chip">Bend</span><span class="chip">Cannon Beach</span><span class="chip">Pacific City</span><span class="chip">Crater Lake</span><span class="chip">Ashland</span></dd></div>
+                <div class="places-row"><dt>Washington</dt><dd><span class="chip">Seattle</span></dd></div>
+                <div class="places-row"><dt>British Columbia</dt><dd><span class="chip">Vancouver</span></dd></div>
+                <div class="places-row"><dt>California</dt><dd><span class="chip">San Francisco</span><span class="chip">Mendocino</span><span class="chip">Southern California</span><span class="chip">San Diego</span><span class="chip">Joshua Tree</span></dd></div>
+                <div class="places-row"><dt>Nevada</dt><dd><span class="chip">Las Vegas</span></dd></div>
+                <div class="places-row"><dt>Utah</dt><dd><span class="chip">Zion</span><span class="chip">Bryce Canyon</span><span class="chip">Arches</span><span class="chip">Moab</span></dd></div>
+                <div class="places-row"><dt>Colorado</dt><dd><span class="chip">Denver</span></dd></div>
+                <div class="places-row"><dt>Texas</dt><dd><span class="chip">San Antonio</span><span class="chip">Austin</span></dd></div>
+                <div class="places-row"><dt>Illinois</dt><dd><span class="chip">Chicago</span></dd></div>
+                <div class="places-row"><dt>Ohio</dt><dd><span class="chip">Cleveland</span></dd></div>
+                <div class="places-row"><dt>Kentucky</dt><dd><span class="chip">Louisville</span></dd></div>
+                <div class="places-row"><dt>Tennessee</dt><dd><span class="chip">Nashville</span></dd></div>
+                <div class="places-row"><dt>New York</dt><dd><span class="chip">New York City</span></dd></div>
+                <div class="places-row"><dt>Ontario</dt><dd><span class="chip">Toronto</span><span class="chip">Wellington</span></dd></div>
+                <div class="places-row"><dt>Hawaii</dt><dd><span class="chip">Kauai</span><span class="chip">Maui</span><span class="chip">Big Island</span></dd></div>
+                <div class="places-row"><dt>Also</dt><dd><span class="chip">Indiana</span><span class="chip">North Carolina</span></dd></div>
+              </dl>
+            </section>
+          </div>
+          <div class="places-col">
+            <section class="places-group">
+              <h3 class="places-continent">South America</h3>
+              <dl class="places-rows">
+                <div class="places-row"><dt>Chile</dt><dd><span class="chip">Santiago</span><span class="chip">Punta Arenas</span></dd></div>
+                <div class="places-row"><dt>Also</dt><dd><span class="chip">Falkland Islands</span></dd></div>
+              </dl>
+            </section>
+            <section class="places-group">
+              <h3 class="places-continent">Antarctica</h3>
+              <dl class="places-rows">
+                <div class="places-row"><dt></dt><dd><span class="chip">Orne Harbour, January 2, 2020</span></dd></div>
+              </dl>
+            </section>
+            <section class="places-group">
+              <h3 class="places-continent">Europe</h3>
+              <dl class="places-rows">
+                <div class="places-row"><dt>Scotland</dt><dd><span class="chip">Edinburgh</span></dd></div>
+                <div class="places-row"><dt>England</dt><dd><span class="chip">London</span></dd></div>
+                <div class="places-row"><dt>Czechia</dt><dd><span class="chip">Prague</span><span class="chip">Brno</span></dd></div>
+                <div class="places-row"><dt>Italy</dt><dd><span class="chip">Milan</span><span class="chip">Bologna</span><span class="chip">Florence</span><span class="chip">Rome</span></dd></div>
+                <div class="places-row"><dt>Also</dt><dd><span class="chip">Iceland</span></dd></div>
+              </dl>
+            </section>
+            <section class="places-group">
+              <h3 class="places-continent">Asia</h3>
+              <dl class="places-rows">
+                <div class="places-row"><dt>Japan</dt><dd><span class="chip">Tokyo</span><span class="chip">Fukuoka</span><span class="chip">Nagasaki</span><span class="chip">Otaru, Hokkaido</span></dd></div>
+                <div class="places-row"><dt>Also</dt><dd><span class="chip">Singapore</span></dd></div>
+              </dl>
+            </section>
+            <section class="places-group">
+              <h3 class="places-continent">Oceania</h3>
+              <dl class="places-rows">
+                <div class="places-row"><dt>New Zealand</dt><dd><span class="chip">Auckland</span><span class="chip">Queenstown</span><span class="chip">Lake Pukaki</span></dd></div>
+                <div class="places-row"><dt>Also</dt><dd><span class="chip">Guam</span></dd></div>
+              </dl>
+            </section>
+          </div>
+        </div>
         <!-- /MAP:GENERATED -->
       </div>
     </section>
