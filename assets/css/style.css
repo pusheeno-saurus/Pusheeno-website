@@ -527,8 +527,51 @@ a { color: var(--accent-strong); }
   .pin-home { width: 15px; height: 15px; margin: -7.5px 0 0 -7.5px; }
 }
 
+/* ---------- Meet the crew ---------- */
+.crew-grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+}
+.crew-card {
+  flex: 1 1 300px;
+  max-width: 352px;
+  padding: 20px 16px 16px;
+  text-align: center;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+.crew-card img {
+  width: 128px;
+  height: 128px;
+  margin: 0 auto 12px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--accent-soft);
+}
+.crew-name { font-size: 1.25rem; margin: 0 0 6px; }
+.crew-bio { color: var(--muted); font-size: 0.95rem; line-height: 1.45; margin: 0 0 10px; }
+.crew-count {
+  margin: 0;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent-strong);
+}
+@media (max-width: 640px) {
+  .crew-card { flex: 1 1 150px; max-width: 48%; padding: 16px 10px 12px; }
+  .crew-card img { width: 96px; height: 96px; }
+}
+
 /* ---------- Gallery ---------- */
-.gallery { background: var(--bg); }
+.gallery { background: var(--bg-alt); }
 .gallery-group + .gallery-group { margin-top: clamp(40px, 6vw, 64px); }
 .gallery-group-title { margin-bottom: 0.1em; }
 .gallery-group-lede { color: var(--muted); margin: 0 0 16px; }
@@ -569,7 +612,7 @@ a { color: var(--accent-strong); }
 }
 
 /* ---------- Social ---------- */
-.social { background: var(--bg-alt); }
+.social { background: var(--bg); }
 .social-grid {
   list-style: none;
   margin: 0;

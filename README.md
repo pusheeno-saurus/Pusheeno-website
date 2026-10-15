@@ -14,6 +14,7 @@ receives. Open `index.html` in a browser to preview it locally.
 | `assets/css/style.css` | Styles. Colours and fonts live in the `:root` block at the top |
 | `assets/js/main.js` | Mobile menu, scroll-in animation, photo lightbox |
 | `assets/img/` | Logo, favicon and photos |
+| `tools/crew/` | The friends list and the script that builds the crew cards |
 | `tools/map/` | The places list, the map data and the script that draws the map |
 | `.github/workflows/deploy.yml` | Publishes the site to GitHub Pages on every push to the default branch |
 
@@ -36,6 +37,15 @@ Everything visible is in `index.html`. Each section is marked with a comment suc
 
 **The two of them**: the `<figure class="couple-item feature">` is the wide photo at the top of
 that section; the others show three across (two on phones), so keep their count a multiple of six.
+
+**Add or edit a friend in Meet the crew**
+
+1. Edit `tools/crew/crew.json`: name, bio, the photo to cut the portrait from, the square to cut
+   (`crop` = left, top, side as fractions of the photo), and the words that identify the friend in
+   captions, which drive the "In N photos" count.
+2. Run `python3 tools/crew/build_crew.py`. It writes the portraits to `assets/img/crew/` and rewrites
+   the cards between the `CREW:GENERATED` markers in `index.html`. Re-run it after adding gallery
+   photos so the counts stay right.
 
 **Add a place to the map**
 

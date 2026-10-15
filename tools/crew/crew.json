@@ -1,0 +1,8 @@
+[
+  {"name": "Mersheen", "slug": "mersheen", "photo": "mersheen-08.jpg", "crop": [0.03, 0.26, 0.42], "match": ["Mersheen"], "bio": "Part mermaid, part Pusheen. His wife since July 7, 2024. Brings the sparkle."},
+  {"name": "Dino Brown", "slug": "dino-brown", "photo": "pusheeno-56.jpg", "crop": [0.0, 0.44, 0.34], "match": ["Brown"], "bio": "A bear in a dinosaur suit, most days. Iceland, Hawaii, flowerpot desserts. Always up for it."},
+  {"name": "Gunnersaurus", "slug": "gunnersaurus", "photo": "pusheeno-46.jpg", "crop": [0.04, 0.05, 0.42], "match": ["Gunnersaurus"], "bio": "Arsenal’s mascot, pocket-sized. Shares his pandan, reluctantly."},
+  {"name": "Miffy", "slug": "miffy", "photo": "pusheeno-19.jpg", "crop": [0.37, 0.65, 0.14], "match": ["Miffy"], "bio": "Quiet. Punctual. Always in the lineup."},
+  {"name": "Ricky", "slug": "ricky", "photo": "pusheeno-28.jpg", "crop": [0.5, 0.42, 0.32], "match": ["Ricky"], "bio": "A frog in a cape. Came to Italy, New Zealand and the pumpkin patch."},
+  {"name": "The minis", "slug": "minis", "photo": "pusheeno-11.jpg", "crop": [0.25, 0.48, 0.4], "match": ["mini"], "bio": "Two tiny dinosaur-cats. Climb on him at the beach, ride along on snow days. Possibly related."}
+]
