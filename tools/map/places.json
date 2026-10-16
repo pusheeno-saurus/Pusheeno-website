@@ -17,6 +17,7 @@
   {"name": "New Orleans, Louisiana", "lat": 29.95, "lon": -90.07, "continent": "North America", "country": "United States"},
   {"name": "North Carolina", "lat": 35.78, "lon": -78.64, "continent": "North America", "country": "United States"},
   {"name": "New York City", "lat": 40.71, "lon": -74.01, "continent": "North America", "country": "United States", "list": ["New York: New York City"]},
+  {"name": "Boston, Massachusetts", "lat": 42.36, "lon": -71.06, "continent": "North America", "country": "United States"},
   {"name": "Toronto and Wellington, Ontario", "lat": 43.8, "lon": -78.4, "continent": "North America", "country": "Canada", "note": "Kim’s Convenience, obviously.", "list": ["Ontario: Toronto", "Ontario: Wellington"]},
   {"name": "Hawaii", "lat": 20.8, "lon": -156.33, "continent": "North America", "country": "United States", "note": "Kauai, Maui and the Big Island. Waimea Canyon, with Mersheen.", "list": ["Hawaii: Kauai", "Hawaii: Maui", "Hawaii: Big Island"]},
   {"name": "Santiago, Chile", "lat": -33.45, "lon": -70.67, "continent": "South America", "country": "Chile"},
