@@ -35,5 +35,6 @@
   {"name": "Singapore", "lat": 1.35, "lon": 103.82, "continent": "Asia", "country": "Singapore", "note": "Where he discovered pandan, December 2022."},
   {"name": "Guam", "lat": 13.44, "lon": 144.79, "continent": "Oceania", "country": "Guam"},
   {"name": "Auckland, New Zealand", "lat": -36.85, "lon": 174.76, "continent": "Oceania", "country": "New Zealand"},
-  {"name": "Queenstown and Lake Pukaki, New Zealand", "lat": -44.6, "lon": 169.4, "continent": "Oceania", "country": "New Zealand", "note": "Glacier-blue water at Lake Pukaki, with Ricky.", "list": ["New Zealand: Queenstown", "New Zealand: Lake Pukaki"]}
+  {"name": "Queenstown and Lake Pukaki, New Zealand", "lat": -44.6, "lon": 169.4, "continent": "Oceania", "country": "New Zealand", "note": "Glacier-blue water at Lake Pukaki, with Ricky.", "list": ["New Zealand: Queenstown", "New Zealand: Lake Pukaki"]},
+  {"name": "Sydney Airport, Australia", "lat": -33.95, "lon": 151.18, "continent": "Oceania", "country": null, "note": "Layover only. Doesn’t count, but he was there."}
 ]
