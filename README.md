@@ -51,7 +51,7 @@ two columns; a group's cell count must stay a multiple of 4 (tall and wide photo
 
 A small virtual-pet toy. Visitors feed him matcha or pandan, pat him, or send him on a trip; three
 meters (snacks, adventure, cuddles) drain slowly in real time, and his face follows their average
-from furious to "tolerating you". Fill every meter and he is content, briefly. Each trip sends back a postcard drawn at
+from furious to "tolerating you". Fill every meter and he is content: smirking, shifty-eyed and clearly up to something. Each trip sends back a postcard drawn at
 random from the gallery photos, so new gallery photos join the game automatically. Progress is saved
 in each visitor's own browser. What he says lives in the `LINES` list in `assets/js/main.js`, under
 "Look after Pusheeno".
