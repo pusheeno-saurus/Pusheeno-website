@@ -1,5 +1,5 @@
 [
-  {"name": "Portland, Oregon", "home": true, "lat": 45.52, "lon": -122.68, "continent": "North America", "country": "United States", "note": "Home. Also Mount Hood, Bend, Cannon Beach, Pacific City and Seattle.", "list": ["Oregon: Portland (home)", "Oregon: Mount Hood", "Oregon: Bend", "Oregon: Cannon Beach", "Oregon: Pacific City", "Washington: Seattle"]},
+  {"name": "Portland, Oregon", "home": true, "lat": 45.52, "lon": -122.68, "continent": "North America", "country": "United States", "note": "Home. Also Mount Hood, Bend, Cannon Beach, Pacific City, Seattle and Leavenworth.", "list": ["Oregon: Portland (home)", "Oregon: Mount Hood", "Oregon: Bend", "Oregon: Cannon Beach", "Oregon: Pacific City", "Washington: Seattle", "Washington: Leavenworth"]},
   {"name": "Crater Lake and Ashland, Oregon", "lat": 42.55, "lon": -122.4, "continent": "North America", "country": "United States", "list": ["Oregon: Crater Lake", "Oregon: Ashland"]},
   {"name": "Vancouver, British Columbia", "lat": 49.28, "lon": -123.12, "continent": "North America", "country": "Canada"},
   {"name": "San Francisco and Mendocino, California", "lat": 38.5, "lon": -123.1, "continent": "North America", "country": "United States", "list": ["California: San Francisco", "California: Mendocino"]},
