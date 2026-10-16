@@ -164,7 +164,7 @@
 
   /* ---- Look after Pusheeno: a small virtual-pet toy ----
      Three meters drain slowly in real time; his mood is their average, and his face follows it.
-     He never looks happy. Progress is saved per visitor in localStorage. */
+     Fill every meter and he is content, briefly. Progress is saved per visitor in localStorage. */
   (function () {
     var root = document.getElementById('gotchi');
     if (!root) return;
@@ -186,7 +186,7 @@
 
     var KEY = 'pusheeno-pet-v1';
     var DECAY = { snacks: 2, adventure: 1.5, cuddles: 3 };   // points lost per hour
-    var LABELS = { furious: 'Furious', grumpy: 'Grumpy', mild: 'Mildly grumpy', ok: 'Tolerating you' };
+    var LABELS = { furious: 'Furious', grumpy: 'Grumpy', mild: 'Mildly grumpy', ok: 'Tolerating you', content: 'Content' };
     var LINES = {
       matcha: ['Matcha. Acceptable.', 'Is this ceremonial grade?', 'He’ll allow it.', 'Slurp. No comment.'],
       pandan: ['Pandan. Now we’re talking.', 'Not as good as Singapore. Still eating it.', 'Green, sweet, correct.', 'Finally, some respect.'],
@@ -195,6 +195,7 @@
       overpat: ['That’s enough.', 'Hands off the spikes.', 'One more and he bites.'],
       leave: ['Packing.', 'Off he goes. Grumbling.', 'He’s going. He’s not happy about it.'],
       back: ['Back. He brought you a postcard.', 'Home again. Postcard attached.', 'He went. He saw. He was unimpressed.'],
+      content: ['Content. Don’t tell anyone.', 'This is as happy as he gets. Enjoy it.', 'He’s content. He’ll deny it later.'],
       all: 'Every postcard collected. He’s been everywhere. Well, not Africa.'
     };
 
@@ -222,16 +223,19 @@
       return state.seen.filter(function (h) { return hrefs.indexOf(h) !== -1; }).length;
     }
 
-    var moodOverride = null, overrideTimer = null, bubbleTimer = null, patTimer = null, patStreak = 0, busy = false;
+    var moodOverride = null, overrideTimer = null, bubbleTimer = null, patTimer = null, patStreak = 0, busy = false, lastMood = null, interacted = false;
 
     function moodName() {
       if (moodOverride) return moodOverride;
+      if (state.snacks >= 90 && state.adventure >= 90 && state.cuddles >= 90) return 'content';
       var v = (state.snacks + state.adventure + state.cuddles) / 3;
       return v < 25 ? 'furious' : v < 55 ? 'grumpy' : v < 85 ? 'mild' : 'ok';
     }
 
     function render() {
       var m = moodName();
+      if (m === 'content' && lastMood && lastMood !== 'content') say(pick(LINES.content), 4200);
+      lastMood = m;
       root.setAttribute('data-mood', m);
       moodLabel.textContent = LABELS[m];
       Object.keys(fills).forEach(function (k) {
@@ -352,13 +356,14 @@
 
     buttons.forEach(function (b) {
       b.addEventListener('click', function () {
+        interacted = true;
         var act = b.getAttribute('data-act');
         if (act === 'matcha' || act === 'pandan') feed(act);
         else if (act === 'pat') pat();
         else if (act === 'trip') trip();
       });
     });
-    pet.addEventListener('click', pat);
+    pet.addEventListener('click', function () { interacted = true; pat(); });
 
     // His age, from his hatch date, so it never goes stale
     var now = new Date();
@@ -382,7 +387,7 @@
       var greeter = new IntersectionObserver(function (entries) {
         if (entries.some(function (e) { return e.isIntersecting; })) {
           greeter.disconnect();
-          setTimeout(function () { say(greeting, 4200); }, 400);
+          setTimeout(function () { if (!interacted) say(greeting, 4200); }, 400);
         }
       }, { threshold: 0.5 });
       greeter.observe(root);

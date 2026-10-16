@@ -707,7 +707,9 @@ a { color: var(--accent-strong); }
   cursor: pointer;
 }
 .gotchi-pet .pet { transform-box: fill-box; transform-origin: 50% 100%; animation: pet-bob 3.2s ease-in-out infinite; }
-.pet-eye { transform-box: fill-box; transform-origin: center; animation: pet-blink 5.5s infinite; }
+.pet-eye { transform-box: fill-box; transform-origin: center; animation: pet-blink 5.5s infinite; transition: opacity 0.3s ease; }
+.pet-eye-content, .pet-heart { opacity: 0; transition: opacity 0.3s ease; }
+.pet-heart { transform-box: fill-box; transform-origin: center; }
 .brow { transform-box: fill-box; transform-origin: center; transition: transform 0.35s ease; }
 .pet-mouth, .pet-blush, .pet-anger { opacity: 0; transition: opacity 0.3s ease; }
 
@@ -723,7 +725,14 @@ a { color: var(--accent-strong); }
 .gotchi[data-mood="mild"] .mouth-grumpy,
 .gotchi[data-mood="furious"] .mouth-furious,
 .gotchi[data-mood="ok"] .mouth-ok { opacity: 1; }
-.gotchi[data-mood="ok"] .pet-blush { opacity: 0.85; }
+.gotchi[data-mood="ok"] .pet-blush,
+.gotchi[data-mood="content"] .pet-blush { opacity: 0.85; }
+.gotchi[data-mood="content"] .brow-l,
+.gotchi[data-mood="content"] .brow-r { transform: translateY(-3px); }
+.gotchi[data-mood="content"] .pet-eye { opacity: 0; }
+.gotchi[data-mood="content"] .pet-eye-content,
+.gotchi[data-mood="content"] .mouth-content { opacity: 1; }
+.gotchi[data-mood="content"] .pet-heart { opacity: 1; animation: pet-heart 2.4s ease-in-out infinite; }
 .gotchi[data-mood="furious"] .pet-anger { opacity: 1; }
 
 .gotchi-pet.is-eating { animation: pet-chomp 0.6s ease; }
@@ -732,6 +741,7 @@ a { color: var(--accent-strong); }
 .gotchi-pet.is-away { animation: pet-trip 1.3s ease-in-out; }
 
 @keyframes pet-bob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-3px); } }
+@keyframes pet-heart { 0%, 100% { transform: translateY(0) scale(1); } 50% { transform: translateY(-4px) scale(1.1); } }
 @keyframes pet-blink { 0%, 93%, 100% { transform: scaleY(1); } 95% { transform: scaleY(0.12); } }
 @keyframes pet-chomp { 0%, 100% { transform: scale(1); } 25%, 75% { transform: scale(1.06, 0.95); } 50% { transform: scale(0.97, 1.03); } }
 @keyframes pet-squish { 0%, 100% { transform: scale(1); } 40% { transform: scale(1.05, 0.9); } }
@@ -1020,5 +1030,5 @@ body.lb-open { overflow: hidden; }
   html { scroll-behavior: auto; }
   .js .reveal { opacity: 1; transform: none; transition: none; }
   .btn, .social-card, .photo img { transition: none; }
-  .gotchi-pet, .gotchi-pet .pet, .pet-eye, .postcard.is-new { animation: none !important; }
+  .gotchi-pet, .gotchi-pet .pet, .pet-eye, .pet-heart, .postcard.is-new { animation: none !important; }
 }
