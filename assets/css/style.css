@@ -395,19 +395,20 @@ a { color: var(--accent-strong); }
   position: relative;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
+  gap: 40px 24px;
 }
-.timeline::before {
+.milestone { position: relative; padding-top: 40px; }
+.milestone::before {
   content: "";
   position: absolute;
   top: 11px;
   left: 0;
-  right: 0;
+  right: -24px;
   height: 3px;
   border-radius: 3px;
   background: var(--border);
 }
-.milestone { position: relative; padding-top: 40px; }
+.milestone:nth-child(4n)::before, .milestone:last-child::before { right: 0; }
 .milestone-dot {
   position: absolute;
   top: 1px;
@@ -431,8 +432,18 @@ a { color: var(--accent-strong); }
 @media (max-width: 800px) {
   .about-grid { grid-template-columns: 1fr; }
   .timeline { grid-template-columns: 1fr; gap: 28px; padding-left: 36px; }
-  .timeline::before { top: 0; bottom: 0; left: 10px; right: auto; width: 3px; height: auto; }
+  .timeline::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 10px;
+    width: 3px;
+    border-radius: 3px;
+    background: var(--border);
+  }
   .milestone { padding-top: 0; }
+  .milestone::before { display: none; }
   .milestone-dot { left: -36px; top: 4px; }
 }
 @media (max-width: 420px) {
