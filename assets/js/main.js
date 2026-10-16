@@ -164,7 +164,7 @@
 
   /* ---- Look after Pusheeno: a small virtual-pet toy ----
      Three meters drain slowly in real time; his mood is their average, and his face follows it.
-     Fill every meter and he is content, in a scheming sort of way. Progress is saved per visitor in localStorage. */
+     Fill every meter and he is content, briefly. Progress is saved per visitor in localStorage. */
   (function () {
     var root = document.getElementById('gotchi');
     if (!root) return;
@@ -195,7 +195,7 @@
       overpat: ['That’s enough.', 'Hands off the spikes.', 'One more and he bites.'],
       leave: ['Packing.', 'Off he goes. Grumbling.', 'He’s going. He’s not happy about it.'],
       back: ['Back. He brought you a postcard.', 'Home again. Postcard attached.', 'He went. He saw. He was unimpressed.'],
-      content: ['Content. And plotting something.', 'Full, rested, and up to no good.', 'Don’t ask what he’s planning.', 'Content. Suspiciously so.'],
+      content: ['Content. Don’t tell anyone.', 'This is as happy as he gets. Enjoy it.', 'He’s content. He’ll deny it later.'],
       all: 'Every postcard collected. He’s been everywhere. Well, not Africa.'
     };
 
