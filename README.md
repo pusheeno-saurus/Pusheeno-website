@@ -47,6 +47,30 @@ two columns; a group's cell count must stay a multiple of 4 (tall and wide photo
    the cards between the `CREW:GENERATED` markers in `index.html`. Re-run it after adding gallery
    photos so the counts stay right.
 
+**Look after Pusheeno (the Play section)**
+
+A small virtual-pet toy. Visitors feed him matcha or pandan, pat him, or send him on a trip; three
+meters (snacks, adventure, cuddles) drain slowly in real time, and his face follows their average
+from furious to "tolerating you". He never looks happy. Each trip sends back a postcard drawn at
+random from the gallery photos, so new gallery photos join the game automatically. Progress is saved
+in each visitor's own browser. What he says lives in the `LINES` list in `assets/js/main.js`, under
+"Look after Pusheeno".
+
+**Suggestions form ("Where should he go next?")**
+
+Suggestions go to a Google Form, so answers land privately in Google Forms and its linked Sheet. The
+form stays hidden on the site until it is connected. To connect or change it:
+
+1. In the Google Form, open the ⋮ menu, choose **Get pre-filled link**, type any answer into each
+   question, click **Get link**, and copy it. It looks like
+   `https://docs.google.com/forms/d/e/FORM_ID/viewform?usp=pp_url&entry.111=...&entry.222=...&entry.333=...`.
+2. On `<form id="suggest-form">` in `index.html`, set `data-action` to the same address with
+   `viewform?...` replaced by `formResponse`, and set `data-entry-place`, `data-entry-idea` and
+   `data-entry-name` to the matching `entry.NNN` ids.
+
+The form must not require sign-in: in its settings, leave "Collect email addresses" off and
+"Limit to 1 response" off.
+
 **Add a place to the map**
 
 1. Add an entry to `tools/map/places.json`: name, latitude, longitude, continent, country, and an

@@ -458,6 +458,7 @@ a { color: var(--accent-strong); }
 }
 .map-stats strong { color: var(--text); font-family: var(--font-display); font-weight: 600; font-size: 1.2rem; }
 .map-stats .sep { margin: 0 8px; opacity: 0.6; }
+.travel { overflow-x: clip; }
 .map { position: relative; margin: 0 0 28px; }
 .map img { width: 100%; height: auto; display: block; }
 .pin {
@@ -502,6 +503,7 @@ a { color: var(--accent-strong); }
   .map-stats { font-size: 0.95rem; }
   .map-stats .sep { margin: 0 5px; }
   .pin { width: 11px; height: 11px; margin: -5.5px 0 0 -5.5px; }
+  .pin-label { max-width: 180px; }
   .pin-home { width: 15px; height: 15px; margin: -7.5px 0 0 -7.5px; }
 }
 
@@ -591,8 +593,303 @@ a { color: var(--accent-strong); }
   pointer-events: none;
 }
 
+/* ---------- Play: look after Pusheeno ---------- */
+.play { background: var(--bg-alt); }
+.play-grid {
+  display: grid;
+  grid-template-columns: minmax(300px, 360px) minmax(0, 1fr);
+  gap: clamp(40px, 6vw, 80px);
+  align-items: center;
+}
+
+.gotchi-wrap {
+  position: relative;
+  isolation: isolate;
+  width: min(100%, 360px);
+  margin: 34px auto 0;
+}
+.gotchi-crest {
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  width: 96px;
+  transform: translateX(-50%);
+  z-index: 0;
+}
+.gotchi {
+  position: relative;
+  z-index: 1;
+  padding: 58px 30px 34px;
+  border-radius: 50% 50% 46% 46% / 40% 40% 34% 34%;
+  background: radial-gradient(120% 90% at 30% 18%, #f1fcf6 0%, #c8eedb 46%, #a2dbbf 100%);
+  box-shadow:
+    inset 0 -16px 30px rgba(31, 92, 63, 0.16),
+    inset 0 12px 24px rgba(255, 255, 255, 0.75),
+    0 24px 50px rgba(43, 42, 51, 0.18);
+  color: #24493a;
+}
+.gotchi-brand {
+  margin: 0 0 12px;
+  text-align: center;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.22em;
+  color: #2f6b52;
+  opacity: 0.75;
+}
+.gotchi-screen {
+  position: relative;
+  padding: 10px 14px 14px;
+  border: 5px solid #2f5e49;
+  border-radius: 22px;
+  background-color: #f3f9ec;
+  background-image: radial-gradient(rgba(43, 42, 51, 0.06) 1px, transparent 1.2px);
+  background-size: 7px 7px;
+  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.12);
+  color: #2b2a33;
+}
+.gotchi-status {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #4d6157;
+}
+.gotchi-status strong { color: #2b2a33; }
+.gotchi-stage { position: relative; padding-top: 46px; }
+.gotchi-bubble {
+  position: absolute;
+  top: 2px;
+  left: 50%;
+  z-index: 2;
+  width: max-content;
+  max-width: 94%;
+  margin: 0;
+  padding: 6px 11px;
+  border: 2px solid #2b2a33;
+  border-radius: 12px;
+  background: #fff;
+  color: #2b2a33;
+  font-weight: 700;
+  font-size: 0.85rem;
+  line-height: 1.3;
+  text-align: center;
+  opacity: 0;
+  transform: translate(-50%, 4px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  pointer-events: none;
+}
+.gotchi-bubble::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  width: 12px;
+  height: 12px;
+  margin-left: -6px;
+  background: #fff;
+  border-right: 2px solid #2b2a33;
+  border-bottom: 2px solid #2b2a33;
+  transform: rotate(45deg);
+}
+.gotchi-bubble.is-shown { opacity: 1; transform: translate(-50%, 0); }
+
+.gotchi-pet {
+  display: block;
+  width: 172px;
+  height: auto;
+  margin: 0 auto;
+  overflow: visible;
+  cursor: pointer;
+}
+.gotchi-pet .pet { transform-box: fill-box; transform-origin: 50% 100%; animation: pet-bob 3.2s ease-in-out infinite; }
+.pet-eye { transform-box: fill-box; transform-origin: center; animation: pet-blink 5.5s infinite; }
+.brow { transform-box: fill-box; transform-origin: center; transition: transform 0.35s ease; }
+.pet-mouth, .pet-blush, .pet-anger { opacity: 0; transition: opacity 0.3s ease; }
+
+.gotchi .brow-l { transform: rotate(20deg); }
+.gotchi .brow-r { transform: rotate(-20deg); }
+.gotchi[data-mood="furious"] .brow-l { transform: rotate(30deg); }
+.gotchi[data-mood="furious"] .brow-r { transform: rotate(-30deg); }
+.gotchi[data-mood="mild"] .brow-l { transform: rotate(12deg); }
+.gotchi[data-mood="mild"] .brow-r { transform: rotate(-12deg); }
+.gotchi[data-mood="ok"] .brow-l { transform: rotate(5deg); }
+.gotchi[data-mood="ok"] .brow-r { transform: rotate(-5deg); }
+.gotchi[data-mood="grumpy"] .mouth-grumpy,
+.gotchi[data-mood="mild"] .mouth-grumpy,
+.gotchi[data-mood="furious"] .mouth-furious,
+.gotchi[data-mood="ok"] .mouth-ok { opacity: 1; }
+.gotchi[data-mood="ok"] .pet-blush { opacity: 0.85; }
+.gotchi[data-mood="furious"] .pet-anger { opacity: 1; }
+
+.gotchi-pet.is-eating { animation: pet-chomp 0.6s ease; }
+.gotchi-pet.is-patted { animation: pet-squish 0.45s ease; }
+.gotchi-pet.is-annoyed { animation: pet-shake 0.5s ease; }
+.gotchi-pet.is-away { animation: pet-trip 1.3s ease-in-out; }
+
+@keyframes pet-bob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-3px); } }
+@keyframes pet-blink { 0%, 93%, 100% { transform: scaleY(1); } 95% { transform: scaleY(0.12); } }
+@keyframes pet-chomp { 0%, 100% { transform: scale(1); } 25%, 75% { transform: scale(1.06, 0.95); } 50% { transform: scale(0.97, 1.03); } }
+@keyframes pet-squish { 0%, 100% { transform: scale(1); } 40% { transform: scale(1.05, 0.9); } }
+@keyframes pet-shake { 0%, 100% { transform: translateX(0); } 20%, 60% { transform: translateX(-6px); } 40%, 80% { transform: translateX(6px); } }
+@keyframes pet-trip {
+  0% { transform: translateX(0); opacity: 1; }
+  40% { transform: translateX(160px); opacity: 0; }
+  60% { transform: translateX(-160px); opacity: 0; }
+  100% { transform: translateX(0); opacity: 1; }
+}
+
+.gotchi-meters { display: grid; gap: 6px; margin-top: 10px; }
+.gotchi-meter {
+  display: grid;
+  grid-template-columns: 84px 1fr;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #4d6157;
+}
+.gotchi-bar { display: block; height: 9px; border-radius: 5px; background: rgba(47, 94, 73, 0.16); overflow: hidden; }
+.gotchi-fill { display: block; height: 100%; width: 50%; border-radius: inherit; background: #3aa874; transition: width 0.5s ease; }
+
+.gotchi-buttons { display: flex; justify-content: center; gap: 14px; margin-top: 20px; }
+.gotchi-buttons button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: #24493a;
+  font: 700 0.74rem var(--font-body);
+  cursor: pointer;
+}
+.gotchi-btn-icon {
+  display: grid;
+  place-items: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 4px 0 #6fae8d, 0 7px 14px rgba(0, 0, 0, 0.12);
+  transition: transform 0.08s ease, box-shadow 0.08s ease;
+}
+.gotchi-btn-icon svg { width: 26px; height: 26px; }
+.gotchi-buttons button:active .gotchi-btn-icon { transform: translateY(3px); box-shadow: 0 1px 0 #6fae8d, 0 2px 6px rgba(0, 0, 0, 0.12); }
+.gotchi-buttons button:focus-visible { outline: none; }
+.gotchi-buttons button:focus-visible .gotchi-btn-icon { outline: 3px solid #2b8a5e; outline-offset: 3px; }
+.gotchi-buttons button[disabled] { opacity: 0.55; cursor: default; }
+
+.postcards { max-width: 460px; }
+.postcards-title { margin-bottom: 0.15em; }
+.postcards-count { margin: 0 0 22px; color: var(--muted); }
+.postcards-count strong { color: var(--text); }
+.postcard {
+  position: relative;
+  margin: 0;
+  padding: 12px 12px 14px;
+  border-radius: 6px;
+  background: #fffdf8;
+  color: #2b2a33;
+  box-shadow: var(--shadow-lg);
+  transform: rotate(-2deg);
+}
+.postcard.is-new { animation: postcard-in 0.5s ease; }
+@keyframes postcard-in { from { opacity: 0; transform: translateY(16px) rotate(-6deg); } to { opacity: 1; transform: rotate(-2deg); } }
+.postcard-photo { display: block; width: 100%; padding: 0; border: 0; background: none; cursor: zoom-in; }
+.postcard-photo img { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 3px; }
+.postcard figcaption {
+  margin-top: 10px;
+  font-family: "Caveat", var(--font-display);
+  font-weight: 600;
+  font-size: 1.5rem;
+  line-height: 1.15;
+}
+.postcard-stamp {
+  position: absolute;
+  top: -12px;
+  right: -12px;
+  display: grid;
+  place-items: center;
+  width: 58px;
+  height: 66px;
+  border: 2px dashed #c9b9a1;
+  background: #fff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.14);
+  transform: rotate(7deg);
+}
+.postcard-stamp img { width: 40px; height: 40px; }
+.postcard-empty {
+  display: grid;
+  place-items: center;
+  aspect-ratio: 4 / 3.3;
+  border: 2px dashed var(--border);
+  border-radius: 6px;
+  transform: rotate(-2deg);
+  color: var(--muted);
+  text-align: center;
+  font-family: "Caveat", var(--font-display);
+  font-weight: 600;
+  font-size: 1.6rem;
+  line-height: 1.2;
+}
+.postcard-empty p { margin: 0; }
+.gotchi-tally { margin: 26px 0 0; color: var(--muted); }
+.gotchi-tally strong { color: var(--text); }
+.gotchi-tally .sep { margin: 0 8px; opacity: 0.6; }
+.gotchi-note { margin: 4px 0 0; color: var(--muted); font-size: 0.85rem; }
+
+.suggest { max-width: 760px; margin: clamp(64px, 9vw, 104px) auto 0; }
+.suggest h3 { margin-bottom: 0.25em; }
+.suggest-lede { color: var(--muted); margin-bottom: 20px; }
+.suggest-form { display: grid; grid-template-columns: 1fr 1fr; gap: 16px 18px; }
+.field { display: flex; flex-direction: column; gap: 6px; }
+.field-wide { grid-column: 1 / -1; }
+.field label { font-weight: 700; font-size: 0.95rem; }
+.field .optional { margin-left: 4px; font-weight: 400; font-size: 0.85rem; color: var(--muted); }
+.field input,
+.field textarea {
+  width: 100%;
+  padding: 11px 14px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--surface);
+  color: var(--text);
+  font: inherit;
+}
+.field textarea { min-height: 96px; resize: vertical; }
+.field input:focus,
+.field textarea:focus { outline: 3px solid var(--accent-soft); border-color: var(--accent); }
+.hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+.suggest-actions { grid-column: 1 / -1; display: flex; flex-wrap: wrap; align-items: center; gap: 12px 18px; }
+.suggest-actions .btn { border: 0; cursor: pointer; }
+.suggest-actions .btn[disabled] { opacity: 0.6; cursor: default; transform: none; }
+.suggest-status { margin: 0; color: var(--muted); }
+.suggest-status.is-ok { color: var(--accent-strong); font-weight: 700; }
+.suggest-status.is-error { color: #c4455a; font-weight: 700; }
+
+@media (max-width: 860px) {
+  .play-grid { grid-template-columns: 1fr; }
+  .postcards { margin: 0 auto; width: 100%; }
+}
+@media (max-width: 640px) {
+  .suggest-form { grid-template-columns: 1fr; }
+}
+@media (max-width: 380px) {
+  .gotchi { padding-left: 22px; padding-right: 22px; }
+  .gotchi-buttons { gap: 10px; }
+  .gotchi-btn-icon { width: 46px; height: 46px; }
+}
+
 /* ---------- Social ---------- */
-.social { background: var(--bg-alt); }
+.social { background: var(--bg); }
 .social-grid {
   list-style: none;
   margin: 0;
@@ -723,4 +1020,5 @@ body.lb-open { overflow: hidden; }
   html { scroll-behavior: auto; }
   .js .reveal { opacity: 1; transform: none; transition: none; }
   .btn, .social-card, .photo img { transition: none; }
+  .gotchi-pet, .gotchi-pet .pet, .pet-eye, .postcard.is-new { animation: none !important; }
 }

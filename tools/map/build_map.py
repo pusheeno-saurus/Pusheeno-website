@@ -148,7 +148,7 @@ pins_html = ''
 for p in places:
     x, y = to_svg(p['lon'], p['lat'])
     px, py = 100 * x / WIDTH, 100 * y / HEIGHT
-    cls = 'pin' + (' pin-home' if p.get('home') else '') + (' edge-left' if px < 18 else ' edge-right' if px > 82 else '')
+    cls = 'pin' + (' pin-home' if p.get('home') else '') + (' edge-left' if px < 30 else ' edge-right' if px > 70 else '')
     label = p['name'] + ('. ' + p['note'] if p.get('note') else '')
     inner = html.escape(p['name']) + ('<small>%s</small>' % html.escape(p['note']) if p.get('note') else '')
     pins_html += ('          <button type="button" class="%s" style="left: %.2f%%; top: %.2f%%" aria-label="%s">'
